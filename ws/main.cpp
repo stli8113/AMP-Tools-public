@@ -52,5 +52,6 @@ int main(int argc, char** argv) {
     bool random_trial_success = HW2::generateAndCheck(algo);
     LOG("Found valid solution in random environment: " << (random_trial_success ? "Yes!" : "No :("));
 
+
     return 0;
 }

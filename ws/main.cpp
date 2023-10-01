@@ -51,7 +51,7 @@ int main(int argc, char** argv) {
         Visualizer::makeFigure(problem, path);
     }
 
-    // Let's get crazy and generate a random environment and test your algorithm
+    /*/ Let's get crazy and generate a random environment and test your algorithm
     {
         amp::Path2D path; // Make empty path, problem, and collision points, as they will be created by generateAndCheck()
         amp::Problem2D random_prob; 
@@ -63,18 +63,18 @@ int main(int argc, char** argv) {
 
         // Visualize the path environment, and any collision points with obstacles
         Visualizer::makeFigure(random_prob, path, collision_points);
-    }
+    }*/
 
     Visualizer::showFigures();
 
-    HW2::grade(algo, "nonhuman.biologic@myspace.edu", argc, argv);
+    // HW2::grade(algo, "stli8113@colorado.edu", argc, argv);
     
     /* If you want to reconstruct your bug algorithm object every trial (to reset member variables from scratch or initialize), use this method instead*/
     //HW2::grade<MyBugAlgorithm>("nonhuman.biologic@myspace.edu", argc, argv, constructor_parameter_1, constructor_parameter_2, etc...);
     
     // This will reconstruct using the default constructor every trial
     //HW2::grade<MyBugAlgorithm>("nonhuman.biologic@myspace.edu", argc, argv);
-
+    
 
     return 0;
 }

@@ -1,5 +1,6 @@
 #include "HelpfulClass.h"
 
-void MyClass::hereIsAMethod() {
-    // Implementation
-}
+// void MyClass::hereIsAMethod() {
+//     // Implementation
+//     return;
+// }

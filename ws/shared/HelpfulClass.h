@@ -2,16 +2,22 @@
 
 #include "AMPCore.h"
 
-namespace amp{
+//transformation matrices;
+Eigen::MatrixXd LinkTransform(double theta, double linkLength);
+Eigen::Matrix2d rotationMatrix(double theta);
 
-Eigen::Matrix2d MyBugAlgorithm::rotationMatrix(double theta){
-    Eigen::MatrixXd m(2,2);
-    m(0,0) = std::cos(theta);
-    m(1,0) = std::sin(theta);
-    m(0,1) = -std::sin(theta);
-    m(1,1) = std::cos(theta);
-    // std::cout << "theta: "<< theta << "\n matrix:" <<  m << std::endl;
-    return m;
-}
+///@brief checks if 2 line segments intersect, assumes endpoints do not lie on either line
+///@param a1, a2 are endpoints of line a, b1, b2 are endpoints of line b
+bool isIntersecting(Eigen::Vector2d a1,Eigen::Vector2d a2,Eigen::Vector2d b1,Eigen::Vector2d b2);
 
-}
+///@brief checks if given point is inside 2d polygon obstacle
+bool isInObstacle(Eigen::Vector2d point, amp::Obstacle2D obstacle);
+
+///@brief finds orientation of ordered set of 3 points
+int orientation(Eigen::Vector2d p,Eigen::Vector2d q,Eigen::Vector2d r);
+
+///@brief checks if 2 polygons are intersecting
+bool polygonIntersecting(amp::Obstacle2D A, amp::Obstacle2D B);
+
+///@brief checks if a line segment intersects a polygon
+bool lineIntersectingPolygon(amp::Obstacle2D obstacle, Eigen::Vector2d a1, Eigen::Vector2d a2);

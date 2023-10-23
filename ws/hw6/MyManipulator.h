@@ -1,5 +1,4 @@
-#ifndef MyManipulator_H
-#define MyManipulator_H
+#pragma once
 
 #include "AMPCore.h"
 
@@ -33,5 +32,3 @@ class MyManipulator : public amp::LinkManipulator2D{
         // this is assuming 2 and 3 link robots, anything above that is beyond scope of the problem
         ManipulatorState getConfigurationFromIK(const Eigen::Vector2d& end_effector_location) const override;
 };
-
-#endif
